@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: dbc3b75c51c184ea9b2a36a996dff75d
+timeCreated: 1479922411
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Canted Comic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 266249bc682fc4edab5c7f8d771cc0c7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
