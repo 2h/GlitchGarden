@@ -22,7 +22,7 @@ public class PlayerPrefsManager : MonoBehaviour {
 	//1 instance running on the class
 	public static void SetMasterVolume(float volume)
 	{
-		if (volume > 0.0f && volume < 1.0f) 
+		if (volume >= 0.0f && volume <= 1.0f) 
 		{
 			PlayerPrefs.SetFloat (MASTER_VOLUME_KEY, volume);
 		} 
@@ -50,32 +50,10 @@ public class PlayerPrefsManager : MonoBehaviour {
 		}
 	}
 
-	#endregion
-	#region UnlockLevel
-
-	public static bool IsLevelUnlocked(int level)
-	{
-		int levelValue = PlayerPrefs.GetInt (LEVEL_KEY + level.ToString ());
-		bool isLevelUnlocked = (levelValue == 1);
-
-
-		if (level <= SceneManager.sceneCountInBuildSettings - 1)
-		//if (level <= Application.levelCount - 1) 
-		{
-			return isLevelUnlocked;
-			//return true;
-		} 
-		else 
-		{
-			Debug.LogError ("Trying to unlock level not in build order.");
-			return false;
-		}
-	}
-	#endregion
 	#region Difficulty
 	public static void SetDifficulty(float difficulty)
 	{
-		if (difficulty >= 0.0f && difficulty <= 1.0f) 
+		if (difficulty >= 1.0f && difficulty <= 3.0f) 
 		{
 			PlayerPrefs.SetFloat (DIFFICULTY_KEY, difficulty);	
 		} 
@@ -88,6 +66,29 @@ public class PlayerPrefsManager : MonoBehaviour {
 	public static float GetDifficulty()
 	{
 		return PlayerPrefs.GetFloat (DIFFICULTY_KEY);
+	}
+	#endregion
+
+	#endregion
+	#region UnlockLevel
+
+	public static bool IsLevelUnlocked(int level)
+	{
+		int levelValue = PlayerPrefs.GetInt (LEVEL_KEY + level.ToString ());
+		bool isLevelUnlocked = (levelValue == 1);
+
+
+		if (level <= SceneManager.sceneCountInBuildSettings - 1)
+			//if (level <= Application.levelCount - 1) 
+		{
+			return isLevelUnlocked;
+			//return true;
+		} 
+		else 
+		{
+			Debug.LogError ("Trying to unlock level not in build order.");
+			return false;
+		}
 	}
 	#endregion
 }

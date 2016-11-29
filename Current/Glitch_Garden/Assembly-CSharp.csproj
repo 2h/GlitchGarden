@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\MusicPlayer.cs" />
      <Compile Include="Assets\Scripts\Music_Manager.cs" />
+     <Compile Include="Assets\Scripts\Options_Controller.cs" />
      <Compile Include="Assets\Scripts\PlayerPrefsManager.cs" />
      <Compile Include="Assets\Scripts\TEST.cs" />
  <Reference Include="UnityEngine.UI">
